@@ -12,23 +12,34 @@ USE codeup_test_db;
 
 # Add SELECT statements after each UPDATE so you can see the results of your handiwork
 
-SELECT name
+SELECT *
 FROM albums;
 
-SELECT name
-FROM albums
-WHERE release_date < 1980;
+# SELECT *
+# FROM albums
+# WHERE release_date < 1980;
 
-SELECT name
+SELECT *
 FROM albums
 WHERE artist = "The Beatles";
 
+SELECT * FROM albums;
 UPDATE  albums
 SET sales = (sales * 10);
 
+SELECT *
+  FROM albums
+  WHERE release_date < 1980;
 UPDATE albums
-SET release_date = 1880
-WHERE release_date < 1980
+  SET release_date = release_date - 100
+  WHERE release_date < 1980;
+
+SELECT *
+  FROM albums
+  WHERE artist = 'Pink Floyd';
+UPDATE albums
+  SET artist = 'Purple Lloyd'
+  WHERE artist = 'Pink Floyd';
 
 
 
