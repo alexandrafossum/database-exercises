@@ -85,7 +85,7 @@ FROM titles
   JOIN dept_emp ON dept_emp.emp_no = titles.emp_no
 WHERE titles.to_date > CURDATE()
   AND dept_emp.to_date > CURDATE()
-  AND dept_no = 'd009'
+  AND dept_name = 'Customer Service'
 GROUP BY titles.title;
 
 
@@ -94,8 +94,8 @@ GROUP BY titles.title;
 SELECT departments.dept_name, CONCAT(first_name, ' ', last_name), salaries.salary
 FROM employees
   JOIN dept_manager ON employees.emp_no = dept_manager.emp_no
-  JOIN departments on dept_manager.dept_no = departments.dept_no
-  JOIN salaries on employees.emp_no = salaries.emp_no
+  JOIN departments ON dept_manager.dept_no = departments.dept_no
+  JOIN salaries ON employees.emp_no = salaries.emp_no
 WHERE dept_manager.to_date > CURDATE()
   AND salaries.to_date > CURDATE()
 ORDER BY departments.dept_name;
